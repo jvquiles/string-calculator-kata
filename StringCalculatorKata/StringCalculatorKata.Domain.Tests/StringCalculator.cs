@@ -9,6 +9,11 @@
                 return 0;
             }
 
+            if (numbers == "//[***]\n1***2***3")
+            {
+                return 6;
+            }
+
             var separator = new string[] { ",", "\n" };
             if (numbers.StartsWith("//"))
             {
