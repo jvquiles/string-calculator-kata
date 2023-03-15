@@ -28,7 +28,7 @@ namespace StringCalculatorKata.Domain.Tests
         {
             var stringCalculator = new StringCalculator();
             var result = stringCalculator.Add("1,2");
-            Assert.That(result, Is.EqualTo(1));
+            Assert.That(result, Is.EqualTo(3));
         }
     }
 }
