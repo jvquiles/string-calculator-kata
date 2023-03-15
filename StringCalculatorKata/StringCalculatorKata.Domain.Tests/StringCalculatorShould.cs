@@ -102,5 +102,13 @@ namespace StringCalculatorKata.Domain.Tests
             var exception = Assert.Throws<Exception>(() => stringCalculator.Add("//;\n1;-2;-3"));
             Assert.That(exception.Message, Is.EqualTo("negatives not allowed -2 -3"));
         }
+
+        [Test]
+        public void AddIgnoringNumbersAbove1000()
+        {
+            var stringCalculator = new StringCalculator();
+            var result = stringCalculator.Add("//;\n1;2;1001");
+            Assert.That(result, Is.EqualTo(3));
+        }
     }
 }
