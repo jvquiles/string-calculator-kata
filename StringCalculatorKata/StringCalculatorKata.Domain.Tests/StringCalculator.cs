@@ -10,9 +10,10 @@
             }
 
             var separator = new string[] { ",", "\n" };
-            if (numbers.StartsWith("//;"))
+            if (numbers.StartsWith("//"))
             {
-                separator = new string[] { ";" };
+                var specificSeparator = numbers.Substring(2, 1);
+                separator = new string[] { specificSeparator };
                 numbers = numbers.Remove(0, 3);
             }
 
