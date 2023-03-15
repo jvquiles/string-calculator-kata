@@ -9,16 +9,6 @@
                 return 0;
             }
 
-            if (numbers == "//;\n1;2;1001")
-            {
-                return 3;
-            }
-
-            if (numbers == "//;\n1;2;1001;2000")
-            {
-                return 3;
-            }
-
             var separator = new string[] { ",", "\n" };
             if (numbers.StartsWith("//"))
             {
@@ -42,6 +32,7 @@
             }
 
             var numberSum = numberList
+                .Where(x => x <= 1000)
                 .Sum();
 
             return numberSum;
