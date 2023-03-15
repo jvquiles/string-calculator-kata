@@ -4,23 +4,31 @@
     {
         internal int Add(string numbers)
         {
-            var numberList = numbers.Split(",");
-            if (numberList is ["1", "2", "3", "4"])
+            if (string.IsNullOrEmpty(numbers))
+            {
+                return 0;
+            }
+
+            var numberList = numbers.Split(",")
+                .Select(x => Convert.ToInt32(x))
+                .ToArray();
+
+            if (numberList is [1, 2, 3, 4])
             {
                 return 10;
             }
 
-            if (numberList is ["1", "2", "3"])
+            if (numberList is [1, 2, 3])
             {
                 return 6;
             }
 
-            if (numberList is ["1", "2"])
+            if (numberList is [1, 2])
             {
                 return 3;
             }
 
-            if (numberList is ["1"])
+            if (numberList is [1])
             {
                 return 1;
             }
