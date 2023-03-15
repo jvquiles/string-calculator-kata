@@ -9,26 +9,26 @@
                 return 0;
             }
 
-            var numberList = numbers.Split(",")
+            var numberSum = numbers.Split(",")
                 .Select(x => Convert.ToInt32(x))
-                .ToArray();
+                .Sum();
 
-            if (numberList is [1, 2, 3, 4])
+            if (numberSum == 10)
             {
                 return 10;
             }
 
-            if (numberList is [1, 2, 3])
+            if (numberSum == 6)
             {
                 return 6;
             }
 
-            if (numberList is [1, 2])
+            if (numberSum == 3)
             {
                 return 3;
             }
 
-            if (numberList is [1])
+            if (numberSum == 1)
             {
                 return 1;
             }
