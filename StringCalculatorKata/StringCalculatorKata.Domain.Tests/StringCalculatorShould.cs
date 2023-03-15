@@ -30,5 +30,13 @@ namespace StringCalculatorKata.Domain.Tests
             var result = stringCalculator.Add("1,2");
             Assert.That(result, Is.EqualTo(3));
         }
+
+        [Test]
+        public void SumThreeNumbers()
+        {
+            var stringCalculator = new StringCalculator();
+            var result = stringCalculator.Add("1,2,3");
+            Assert.That(result, Is.EqualTo(6));
+        }
     }
 }
