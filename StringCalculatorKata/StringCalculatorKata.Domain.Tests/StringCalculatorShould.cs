@@ -48,7 +48,7 @@ namespace StringCalculatorKata.Domain.Tests
         }
 
         [Test]
-        public void AddNumbersWithNewLinesAndComas2()
+        public void AddNumbersWithNewLineAsSeparator()
         {
             var stringCalculator = new StringCalculator();
             var result = stringCalculator.Add("1\n2,3");
