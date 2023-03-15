@@ -16,7 +16,7 @@ namespace StringCalculatorKata.Domain.Tests
         }
 
         [Test]
-        public void SumOneNumber()
+        public void AddOneNumber()
         {
             var stringCalculator = new StringCalculator();
             var result = stringCalculator.Add("1");
@@ -24,7 +24,7 @@ namespace StringCalculatorKata.Domain.Tests
         }
 
         [Test]
-        public void SumTwoNumbers()
+        public void AddTwoNumbers()
         {
             var stringCalculator = new StringCalculator();
             var result = stringCalculator.Add("1,2");
@@ -32,7 +32,7 @@ namespace StringCalculatorKata.Domain.Tests
         }
 
         [Test]
-        public void SumThreeNumbers()
+        public void AddThreeNumbers()
         {
             var stringCalculator = new StringCalculator();
             var result = stringCalculator.Add("1,2,3");
