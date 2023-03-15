@@ -118,5 +118,13 @@ namespace StringCalculatorKata.Domain.Tests
             var result = stringCalculator.Add("//;\n1;2;1001;2000");
             Assert.That(result, Is.EqualTo(3));
         }
+
+        [Test]
+        public void AddUsesComposedSeparator()
+        {
+            var stringCalculator = new StringCalculator();
+            var result = stringCalculator.Add("//[***]\n1***2***3");
+            Assert.That(result, Is.EqualTo(6));
+        }
     }
 }
