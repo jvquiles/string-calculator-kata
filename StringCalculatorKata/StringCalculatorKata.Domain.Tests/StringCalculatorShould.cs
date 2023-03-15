@@ -51,10 +51,7 @@ namespace StringCalculatorKata.Domain.Tests
         public void AddNumbersWithNewLinesAndComas()
         {
             var stringCalculator = new StringCalculator();
-            var result = stringCalculator.Add(@"1,
-                                                1,1,1,1,1,,
-                                                ,
-                                                1,1,1,1,,1,1,1,1,0");
+            var result = stringCalculator.Add("1,\n1,1,1,1,1,,\n,\n1,1,1,1,,1,1,1,1,0");
             Assert.That(result, Is.EqualTo(14));
         }
     }
