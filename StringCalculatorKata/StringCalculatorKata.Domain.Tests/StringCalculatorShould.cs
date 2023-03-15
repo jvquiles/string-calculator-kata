@@ -68,7 +68,7 @@ namespace StringCalculatorKata.Domain.Tests
         {
             var stringCalculator = new StringCalculator();
             var result = stringCalculator.Add("//;\n1;2;3");
-            Assert.That(result, Is.EqualTo(10));
+            Assert.That(result, Is.EqualTo(6));
         }
     }
 }

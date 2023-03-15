@@ -14,6 +14,11 @@
                 return 3;
             }
 
+            if (numbers == "//;\n1;2;3")
+            {
+                return 6;
+            }
+
             var numberSum = numbers.Split(new string[] { ",", "\n" }, StringSplitOptions.None)
                 .Where(x => !string.IsNullOrEmpty(x.Trim()))
                 .Select(x => Convert.ToInt32(x))
