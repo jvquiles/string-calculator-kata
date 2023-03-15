@@ -14,5 +14,13 @@ namespace StringCalculatorKata.Domain.Tests
             var result = stringCalculator.Add("");
             Assert.That(result, Is.EqualTo(0));
         }
+
+        [Test]
+        public void SumOne()
+        {
+            var stringCalculator = new StringCalculator();
+            var result = stringCalculator.Add("1");
+            Assert.That(result, Is.EqualTo(1));
+        }
     }
 }
