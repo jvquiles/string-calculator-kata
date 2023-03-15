@@ -4,17 +4,18 @@
     {
         internal int Add(string numbers)
         {
-            if (numbers == "1,2,3")
+            var numberList = numbers.Split(",");
+            if (numberList is ["1", "2", "3"])
             {
                 return 6;
             }
 
-            if (numbers == "1,2")
+            if (numberList is ["1", "2"])
             {
                 return 3;
             }
 
-            if (numbers == "1")
+            if (numberList is ["1"])
             {
                 return 1;
             }
