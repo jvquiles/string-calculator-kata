@@ -86,5 +86,13 @@ namespace StringCalculatorKata.Domain.Tests
             var result = stringCalculator.Add("//-\n1-2-3-4");
             Assert.That(result, Is.EqualTo(10));
         }
+
+        [Test]
+        public void AddNegativeNumbers()
+        {
+            var stringCalculator = new StringCalculator();
+            var exception = Assert.Throws<Exception>(() => stringCalculator.Add("//;\n1;-2"));
+            Assert.That(exception.Message, Is.EqualTo("negatives not allowed -2"));
+        }
     }
 }
