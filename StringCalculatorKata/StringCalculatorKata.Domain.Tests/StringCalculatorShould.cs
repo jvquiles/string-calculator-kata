@@ -54,5 +54,13 @@ namespace StringCalculatorKata.Domain.Tests
             var result = stringCalculator.Add("1\n2,3");
             Assert.That(result, Is.EqualTo(6));
         }
+
+        [Test]
+        public void AddNumbersSpecificSeparator()
+        {
+            var stringCalculator = new StringCalculator();
+            var result = stringCalculator.Add("//;\n1;2");
+            Assert.That(result, Is.EqualTo(3));
+        }
     }
 }
