@@ -94,5 +94,13 @@ namespace StringCalculatorKata.Domain.Tests
             var exception = Assert.Throws<Exception>(() => stringCalculator.Add("//;\n1;-2"));
             Assert.That(exception.Message, Is.EqualTo("negatives not allowed -2"));
         }
+
+        [Test]
+        public void AddTwoNegativeNumbers()
+        {
+            var stringCalculator = new StringCalculator();
+            var exception = Assert.Throws<Exception>(() => stringCalculator.Add("//;\n1;-2;-3"));
+            Assert.That(exception.Message, Is.EqualTo("negatives not allowed -2;-3"));
+        }
     }
 }
