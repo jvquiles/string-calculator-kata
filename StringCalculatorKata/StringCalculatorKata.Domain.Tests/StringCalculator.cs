@@ -9,7 +9,7 @@
                 return 0;
             }
 
-            var numberSum = numbers.Split(",")
+            var numberSum = numbers.Split(new string[] { ",", "\n" }, StringSplitOptions.None)
                 .Where(x => !string.IsNullOrEmpty(x.Trim()))
                 .Select(x => Convert.ToInt32(x))
                 .Sum();
