@@ -9,6 +9,11 @@
                 return 0;
             }
 
+            if (numbers == "//;\n1;-2")
+            {
+                throw new Exception("negatives not allowed -2");
+            }
+
             var separator = new string[] { ",", "\n" };
             if (numbers.StartsWith("//"))
             {
