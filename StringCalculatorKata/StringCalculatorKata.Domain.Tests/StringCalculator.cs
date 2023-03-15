@@ -10,6 +10,7 @@
             }
 
             var numberSum = numbers.Split(",")
+                .Where(x => !string.IsNullOrEmpty(x.Trim()))
                 .Select(x => Convert.ToInt32(x))
                 .Sum();
 
