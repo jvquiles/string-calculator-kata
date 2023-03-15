@@ -8,9 +8,11 @@ namespace StringCalculatorKata.Domain.Tests
         }
 
         [Test]
-        public void Test1()
+        public void Sum1And1()
         {
-            Assert.Pass();
+            var stringCalculator = new StringCalculator();
+            var result = stringCalculator.Add("");
+            Assert.That(result, Is.EqualTo(0));
         }
     }
 }
