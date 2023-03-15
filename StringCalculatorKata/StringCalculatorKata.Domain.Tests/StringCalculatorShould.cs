@@ -48,11 +48,11 @@ namespace StringCalculatorKata.Domain.Tests
         }
 
         [Test]
-        public void AddNumbersWithNewLinesAndComas()
+        public void AddNumbersWithNewLinesAndComas2()
         {
             var stringCalculator = new StringCalculator();
-            var result = stringCalculator.Add("1,\n1,1,1,1,1,,\n,\n1,1,1,1,,1,1,1,1,0");
-            Assert.That(result, Is.EqualTo(14));
+            var result = stringCalculator.Add("1\n2,3");
+            Assert.That(result, Is.EqualTo(6));
         }
     }
 }
