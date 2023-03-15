@@ -4,7 +4,7 @@
     {
         internal int Add(string numbers)
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }

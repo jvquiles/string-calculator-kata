@@ -8,7 +8,7 @@ namespace StringCalculatorKata.Domain.Tests
         }
 
         [Test]
-        public void Sum1And1()
+        public void SumStringEmpty()
         {
             var stringCalculator = new StringCalculator();
             var result = stringCalculator.Add("");
