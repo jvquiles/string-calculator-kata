@@ -46,5 +46,16 @@ namespace StringCalculatorKata.Domain.Tests
             var result = stringCalculator.Add("1,2,3,4");
             Assert.That(result, Is.EqualTo(10));
         }
+
+        [Test]
+        public void AddNumbersWithNewLinesAndComas()
+        {
+            var stringCalculator = new StringCalculator();
+            var result = stringCalculator.Add(@"1,
+                                                1,1,1,1,1,,
+                                                ,
+                                                1,1,1,1,,1,1,1,1,0");
+            Assert.That(result, Is.EqualTo(14));
+        }
     }
 }
