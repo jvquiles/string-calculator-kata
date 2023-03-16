@@ -9,22 +9,20 @@
                 return 0;
             }
 
-            if (numbers == "//[***]\n1***2***3")
-            {
-                return 6;
-            }
-
-            if (numbers == "//[;;]\n1;;2")
-            {
-                return 3;
-            }
-
-            var separator = new string[] { ",", "\n" };
+            var separator = new[] { ",", "\n" };
             if (numbers.StartsWith("//"))
             {
-                var specificSeparator = numbers.Substring(2, 1);
-                separator = new string[] { specificSeparator };
-                numbers = numbers.Remove(0, 3);
+                var separatorInitIndex = numbers.IndexOf("[", StringComparison.InvariantCulture);
+                var separatorEndIndex = numbers.IndexOf("]", StringComparison.InvariantCulture);
+                if (separatorInitIndex == -1 && separatorEndIndex == -1)
+                {
+                    separatorInitIndex = 1;
+                    separatorEndIndex = 3;
+                }
+
+                var specificSeparator = numbers.Substring(separatorInitIndex + 1, separatorEndIndex - separatorInitIndex - 1);
+                numbers = numbers.Remove(0, separatorEndIndex + 1);
+                separator = new[] { specificSeparator };
             }
 
             var numberList = numbers.Split(separator, StringSplitOptions.None)
