@@ -136,7 +136,7 @@ namespace StringCalculatorKata.Domain.Tests
         }
 
         [Test]
-        public void AddUsesMultipleComposedSeparator()
+        public void AddUsesMultipleSeparator()
         {
             var stringCalculator = new StringCalculator();
             var result = stringCalculator.Add("//[;][#]\n1;2#3");
