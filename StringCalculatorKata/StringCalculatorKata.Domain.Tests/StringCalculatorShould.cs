@@ -125,5 +125,12 @@ namespace StringCalculatorKata.Domain.Tests
             var result = StringCalculator.Add("//[;][#]\n1;2#3");
             Assert.That(result, Is.EqualTo(6));
         }
+
+        [Test]
+        public void AddUsesTwoCharsMultipleSeparator()
+        {
+            var result = StringCalculator.Add("//[;;][###]\n1;;2###3");
+            Assert.That(result, Is.EqualTo(6));
+        }
     }
 }
