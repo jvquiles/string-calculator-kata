@@ -2,7 +2,7 @@
 {
     internal class StringCalculator
     {
-        internal int Add(string numbers)
+        internal static int Add(string numbers)
         {
             if (string.IsNullOrEmpty(numbers))
             {
