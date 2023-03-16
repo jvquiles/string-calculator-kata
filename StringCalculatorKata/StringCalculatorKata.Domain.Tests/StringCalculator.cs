@@ -26,7 +26,8 @@
                 }
 
                 var specificSeparator = numbers.Substring(separatorInitIndex + 1, separatorEndIndex - separatorInitIndex - 1);
-                numbers = numbers.Remove(0, separatorEndIndex + 1);
+                var endOfSeparators = numbers.IndexOf("\n", StringComparison.InvariantCulture);
+                numbers = numbers.Remove(0,  endOfSeparators);
                 separator = new[] { specificSeparator };
             }
 
