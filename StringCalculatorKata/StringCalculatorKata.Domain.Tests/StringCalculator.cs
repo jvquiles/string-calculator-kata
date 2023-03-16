@@ -9,26 +9,12 @@
                 return 0;
             }
 
-            if (numbers == "//[;][#]\n1;2#3")
-            {
-                return 6;
-            }
-
             var separator = new[] { ",", "\n" };
             if (numbers.StartsWith("//"))
             {
-                var separatorInitIndex = numbers.IndexOf("[", StringComparison.InvariantCulture);
-                var separatorEndIndex = numbers.IndexOf("]", StringComparison.InvariantCulture);
-                if (separatorInitIndex == -1 && separatorEndIndex == -1)
-                {
-                    separatorInitIndex = 1;
-                    separatorEndIndex = 3;
-                }
-
-                var specificSeparator = numbers.Substring(separatorInitIndex + 1, separatorEndIndex - separatorInitIndex - 1);
+                separator = GetSeparator(numbers);
                 var endOfSeparators = numbers.IndexOf("\n", StringComparison.InvariantCulture);
                 numbers = numbers.Remove(0,  endOfSeparators);
-                separator = new[] { specificSeparator };
             }
 
             var numberList = numbers.Split(separator, StringSplitOptions.None)
@@ -50,6 +36,18 @@
                 .Sum();
 
             return numberSum;
+        }
+
+        private static string[] GetSeparator(string numbers)
+        {
+            if (!numbers.Contains("["))
+            {
+                return new []{ numbers.Substring(2, 1) };
+            }
+
+            var delimiters = numbers.Split(new string[] {"[", "[]", "]"}, StringSplitOptions.None);
+            var firstAndLast = new[] { delimiters.First(), delimiters.Last() };
+            return delimiters.Except(firstAndLast).ToArray();
         }
     }
 }
